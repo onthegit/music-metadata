@@ -12,17 +12,7 @@
   },
   "type": "module",
   "main": "dist/lib/index.js",
-  "exports": {
-    ".": {
-      "node": "./lib/index.js",
-      "default": "./lib/core.js"
-    }
-  },
-  "types": "lib/index.d.ts",
-  "files": [
-    "lib/**/*.js",
-    "lib/**/*.d.ts"
-  ],
+  "types": "dist/lib/index.d.ts",
   "keywords": [
     "music",
     "metadata",
