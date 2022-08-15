@@ -384,7 +384,8 @@ export type FormatId =
   | 'creationTime'
   | 'trackPeakLevel'
   | 'trackGain'
-  | 'albumGain';
+  | 'albumGain'
+  | 'framesOffset';
 
 export interface IAudioTrack {
   samplingFrequency?: number;
@@ -506,6 +507,8 @@ export interface IFormat {
   readonly trackGain?: number;
   readonly trackPeakLevel?: number;
   readonly albumGain?: number;
+
+  readonly framesOffset?: number;
 }
 
 export interface ITag {
