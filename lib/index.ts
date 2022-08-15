@@ -24,32 +24,3 @@ export async function parseStream(stream: Stream.Readable, fileInfo?: strtok3.IF
   return parseFromTokenizer(tokenizer, options);
 }
 
-/**
- * Parse audio from Node file
- * @param filePath - Media file to read meta-data from
- * @param options - Parsing options
- * @returns Metadata
- */
-export async function parseFile(filePath: string, options: IOptions = {}): Promise<IAudioMetadata> {
-
-  debug(`parseFile: ${filePath}`);
-
-  const fileTokenizer = await strtok3.fromFile(filePath);
-
-  const fileReader = await RandomFileReader.init(filePath, fileTokenizer.fileInfo.size);
-  try {
-    await scanAppendingHeaders(fileReader, options);
-  } finally {
-    await fileReader.close();
-  }
-
-  try {
-    const parserName = ParserFactory.getParserIdForExtension(filePath);
-    if (!parserName)
-      debug(' Parser could not be determined by file extension');
-
-    return await ParserFactory.parse(fileTokenizer, parserName, options);
-  } finally {
-    await fileTokenizer.close();
-  }
-}

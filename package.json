@@ -128,5 +128,8 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Borewit/music-metadata/issues"
+  },
+  "browser": {
+    "fs": false
   }
 }
