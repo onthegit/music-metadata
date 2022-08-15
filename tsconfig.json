@@ -9,12 +9,13 @@
     "target": "es6",
     "esModuleInterop": true,
     "baseUrl": ".",
-    "include": [
-      "src/**/*"
-    ],
     "paths": {
-      "strtok3/core": ["node_modules/strtok3/lib/core"]
+      "strtok3/core": [
+        "node_modules/strtok3/lib/core"
+      ]
     }
-    
-  }
+  },
+  "include": [
+    "lib/**/*"
+  ],
 }
