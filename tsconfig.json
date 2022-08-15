@@ -4,9 +4,9 @@
     "declaration": true,
     "allowJs": true,
     "inlineSources": false,
-    "module": "node16",
+    "module": "ESNext",
     "moduleResolution": "node16",
-    "target": "ES2019",
+    "target": "es6",
     "esModuleInterop": true,
     "baseUrl": ".",
     "paths": {
