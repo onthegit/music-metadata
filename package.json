@@ -73,7 +73,7 @@
     "bwf"
   ],
   "scripts": {
-    "prepare": "tsc",
+    "prepare": "npm run build",
     "clean": "del-cli lib/**/*.js lib/**/*.js.map lib/**/*.d.ts src/**/*.d.ts test/**/*.js test/**/*.js.map test/**/*.js test/**/*.js.map doc-gen/**/*.js doc-gen/**/*.js.map",
     "compile-src": "tsc -p lib",
     "compile-test": "tsc -p test",
@@ -83,7 +83,7 @@
     "lint-md": "remark -u preset-lint-recommended .",
     "lint": "npm run lint-md && npm run eslint",
     "test": "mocha",
-    "build": "npm run clean && npm run compile && npm run doc-gen",
+    "build": "tsc",
     "start": "npm-run-all compile lint cover-test",
     "test-coverage": "c8 npm run test",
     "send-codacy": "c8 report --reporter=text-lcov | codacy-coverage",
